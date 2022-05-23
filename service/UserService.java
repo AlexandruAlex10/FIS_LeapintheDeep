@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -62,9 +63,18 @@ public class UserService {
         return LogInSignUp.FAIL;
     }
 
+    public Optional<User> getUserById(Long id) {
+        return this.userRepository.findById(id);
+    }
+
+    public Optional<User> getUserByUserName(String username){
+        return this.userRepository.findByUsername(username);
+    }
+
     public List<User> getUsers() {
         List<User> allUsers = new ArrayList<>();
         this.userRepository.findAll().forEach(allUsers::add);
         return allUsers;
     }
+
 }
