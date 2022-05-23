@@ -36,8 +36,20 @@ public class UserController {
         return new ResponseEntity<>(userService.logOut(user), HttpStatus.OK);
     }
 
+    @GetMapping("/user/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable() Long id){
+        return new ResponseEntity(userService.getUserById(id).get(), HttpStatus.OK);
+        //daca e Optional, pui .get()
+    }
+
+    @GetMapping("/user/{name}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable() String name){
+        return new ResponseEntity(userService.getUserByUserName(name).get(), HttpStatus.OK);
+    }
+
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers(){
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
+
 }
