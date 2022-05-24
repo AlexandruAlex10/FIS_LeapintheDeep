@@ -1,0 +1,12 @@
+com\example\bwa\UserNotFoundException.class
+com\example\bwa\user\Admin.class
+com\example\bwa\repo\UserRepository.class
+com\example\bwa\service\AdminService.class
+com\example\bwa\service\UserService.class
+com\example\bwa\BwaApplication.class
+com\example\bwa\controller\AdminController.class
+com\example\bwa\controller\UserController.class
+com\example\bwa\enums\UserType.class
+com\example\bwa\user\User.class
+com\example\bwa\repo\AdminRepository.class
+com\example\bwa\enums\LogInSignUp.class
